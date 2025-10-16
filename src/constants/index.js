@@ -1,5 +1,9 @@
 const navLinks = [
   {
+    name: "Home",
+    link: "#",
+  },
+  {
     name: "Work",
     link: "#work",
   },
@@ -248,6 +252,7 @@ const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
+    src: "https://www.instagram.com/arcturus14_15_40"
   },
   {
     name: "fb",
@@ -256,10 +261,12 @@ const socialImgs = [
   {
     name: "x",
     imgPath: "/images/x.png",
+    src: "https://x.com/Ayush_B22"
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    src: "https://www.linkedin.com/in/bijalwan/"
   },
 ];
 
