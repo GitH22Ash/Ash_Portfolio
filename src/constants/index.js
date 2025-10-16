@@ -255,8 +255,9 @@ const socialImgs = [
     src: "https://www.instagram.com/arcturus14_15_40"
   },
   {
-    name: "fb",
-    imgPath: "/images/fb.png",
+    name: "gh",
+    imgPath: "/images/gh.png",
+    src:"https://github.com/GitH22Ash"
   },
   {
     name: "x",

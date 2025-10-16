@@ -5,12 +5,21 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         
-        {/* Terms */}
-        <div className="flex flex-col justify-center">
-          <p className="text-sm hover:underline cursor-pointer">
-            Terms & Conditions
-          </p>
-        </div>
+        {/* Blog */}
+      <div className="flex flex-col justify-center">
+        <a
+          href="https://tinyurl.com/ash-blog-portfolio" 
+          target="_blank"                 // Opens in a new tab
+          rel="noopener noreferrer"       // Security best practice
+        >
+          <img
+            src="/images/blog.png"
+            alt="blog"
+            className="inline w-20 h-10 mr-1 mb-1 hover:opacity-80 transition cursor-pointer hover:scale-150"
+          />
+        </a>
+      </div>
+
 
         {/* Social Icons */}
         <div className="socials   flex gap-6 justify-center">
@@ -42,7 +51,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="flex flex-col justify-center">
           <p className="text-center md:text-end text-sm text-gray-400">
-            © {new Date().getFullYear()} Ayush Bijalwan. All rights reserved.
+            © {new Date().getFullYear()} Ayush Bijalwan.<br/> All rights reserved.
           </p>
         </div>
       </div>
