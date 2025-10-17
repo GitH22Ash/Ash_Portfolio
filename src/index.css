@@ -487,6 +487,8 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+/* Add this to your existing CSS */
+
 .expanding-logo {
   @apply relative text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
   display: inline-flex;
@@ -507,6 +509,21 @@ section {
   opacity: 1;
   overflow: hidden;
   white-space: nowrap;
+  
+  /* Flowing gradient effect */
+  background: linear-gradient(
+    90deg,
+    #62e0ff 0%,
+    #52aeff 25%,
+    #fd5c79 50%,
+    #6d45ce 75%,
+    #62e0ff 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flowingGradient 4s linear infinite;
 }
 
 .expanding-logo .name-ayush {
@@ -517,6 +534,21 @@ section {
   white-space: nowrap;
   position: absolute;
   left: 0;
+  
+  /* Flowing gradient effect */
+  background: linear-gradient(
+    90deg,
+    #62e0ff 0%,
+    #52aeff 25%,
+    #fd5c79 50%,
+    #6d45ce 75%,
+    #62e0ff 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flowingGradient 4s linear infinite;
 }
 
 .expanding-logo .space {
@@ -534,6 +566,31 @@ section {
   overflow: hidden;
   white-space: nowrap;
   transition-delay: 0s;
+  
+  /* Flowing gradient effect */
+  background: linear-gradient(
+    90deg,
+    #62e0ff 0%,
+    #52aeff 25%,
+    #ea677f 50%,
+    #6d45ce 75%,
+    #62e0ff 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flowingGradient 4s linear infinite;
+}
+
+/* Flowing gradient animation */
+@keyframes flowingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 .expanding-logo:hover .name-ash {
@@ -557,3 +614,32 @@ section {
   opacity: 1;
   transition-delay: 0.15s;
 }
+
+/*Add a glow effect on hover */
+.expanding-logo:hover .name-ayush,
+.expanding-logo:hover .surname {
+  filter: drop-shadow(0 0 20px rgba(98, 224, 255, 0.5));
+}
+
+/* Alternative: Faster flowing effect */
+@keyframes flowingGradientFast {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+/* Apply faster effect (change animation name if you want faster) */
+.expanding-logo .name-ash,
+.expanding-logo .name-ayush,
+.expanding-logo .surname {
+  animation: flowingGradientFast 7s linear infinite;
+}
+
+/* Apply slower effect (change animation name if you want slower) */
+/* .expanding-logo .name-ash,
+.expanding-logo .name-ayush,
+.expanding-logo .surname {
+  animation: flowingGradientSlow 6s linear infinite;
+} */

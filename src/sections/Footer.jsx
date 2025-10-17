@@ -2,7 +2,7 @@ import { socialImgs } from "../constants";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="footer-container">
         
         {/* Blog */}
