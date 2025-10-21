@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import AnimatedCounter from "../components/AnimatedCounter";
-import Button from "../components/Button";
-import { words } from "../constants";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
+import AnimatedCounter from "../components/AnimatedCounter.jsx";
+import Button from "../components/Button.jsx";
+import { words } from "../constants/index.js";
+import HeroExperience from "../components/models/hero_models/HeroExperience.jsx";
 
 const Hero = () => {
   useGSAP(() => {
@@ -51,16 +51,26 @@ const Hero = () => {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Ayush, Fullstack Web Developer ,an aspiring Software Engineer <br/> and Designer. I help 
-              individuals bring their ideas to life through<br/>
+              Hi, I’m Ayush, Fullstack Web Developer ,an aspiring Software
+              Engineer <br /> and Designer. I help individuals bring their
+              ideas to life through
+              <br />
               innovative and user-centric digital solutions.
             </p>
-
+            
+           <div className="flex gap-4 justify-left">
             <Button
               text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
+              className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
               id="counter"
             />
+            <Button
+              text="View Resume"
+              className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
+              id="counter"
+            />
+          </div>
+
           </div>
         </header>
 
@@ -72,9 +82,10 @@ const Hero = () => {
         </figure>
       </div>
 
-      <AnimatedCounter />
+      {/* <AnimatedCounter /> */}
     </section>
   );
 };
 
 export default Hero;
+

@@ -86,12 +86,12 @@ section {
 
   .hero-text {
     @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
-    img {
-      @apply size-8 md:size-10 object-contain;
-    }
-    .slide {
-      @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
-    }
+  }
+  .hero-text img {
+    @apply size-8 md:size-10 object-contain;
+  }
+  .hero-text .slide {
+    @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
   }
 
   .hero-badge {
@@ -101,122 +101,136 @@ section {
   .hero-3d-layout {
     @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
   }
-
+/* nav bar changes would take effect when we make changes here */
   .navbar {
-    @apply fixed w-full left-1/2 py-5 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
+    @apply fixed w-full left-1/2 py-4 px-5 md:px-20 -translate-x-1/2 z-[100] transition-all duration-300 ease-in-out;
+  }
 
-    &.scrolled {
-      @apply top-0;
+  .navbar.scrolled {
+    @apply top-0;
+    /* Liquid Glass Effect for Dark Background */
+    background: rgba(14, 14, 16, 0.5);
+    backdrop-filter: blur(10px) saturate(100%) brightness(1.5);
+    -webkit-backdrop-filter: blur(14px) saturate(200%) brightness(1.5);
+    background-color: rgba(2, 2, 3, 0.8);
+    /* Subtle border for depth with glow */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.155);
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0px 20px 10px 10px;
       
-      /* Liquid Glass Effect for Dark Background */
-      background: rgba(14, 14, 16, 0.5);
-      backdrop-filter: blur(14px) saturate(200%) brightness(1.5);
-      -webkit-backdrop-filter: blur(14px) saturate(200%) brightness(1.5);
-      background-color: rgba(14, 14, 16, 0.8);
-      
-      /* Subtle border for depth with glow */
-      border-bottom: 3px solid rgba(255, 255, 255, 0.15);
-      /* border-top: 3px solid rgba(255, 255, 255, 0.15); */
-      border-radius: 0px 0px 20px 20px;
-      
-      /* Layered glass effect with subtle glow */
-      /* box-shadow: 
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-        0 4px 24px rgba(0, 0, 0, 0.4),
-        0 0 80px rgba(98, 224, 255, 0.05); */
     }
 
     &.not-scrolled {
-      @apply md:top-10 top-0 bg-transparent;
-    }
-
-    .inner {
-      @apply mx-auto flex items-center justify-between;
-    }
-
-    .logo {
-      @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
-    }
-
-    nav.desktop {
-      @apply hidden lg:flex items-center;
-
-      ul {
-        @apply flex space-x-8;
-
-        li {
-          @apply text-white-50 relative;
-
-          span {
-            @apply transition-colors duration-300 hover:text-white;
-          }
-
-          .underline {
-            @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full;
-          }
-        }
-      }
-    }
-
-    .contact-btn {
-      @apply flex;
-
-      .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
-
-        span {
-          @apply group-hover:text-white transition-colors duration-300;
-        }
-      }
-    }
+    @apply md:top-10 top-0 bg-transparent;
   }
 
+  .navbar .inner {
+    @apply mx-auto flex items-center justify-between;
+  }
+
+  .navbar .logo {
+    @apply text-white-50 text-xl md:text-2xl font-semibold transition-transform duration-300 hover:scale-105;
+  }
+
+  nav.desktop {
+    @apply hidden lg:flex items-center;
+  }
+
+  nav.desktop ul {
+    @apply flex space-x-8;
+  }
+
+  nav.desktop ul li {
+    @apply text-white-50 relative;
+  }
+
+  nav.desktop ul li span {
+    @apply transition-colors duration-300 hover:text-white;
+  }
+
+  nav.desktop ul li .underline {
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full;
+    background: linear-gradient(90deg, 
+      #ff6b6bc5, #ef94f7b0, hsla(144, 90%, 76%, 0.77), #4ecdc5cd, #6B8EFF, #A78BFA
+    );
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .navbar .contact-btn {
+    @apply flex;
+    position: relative;
+    background: linear-gradient(90deg, #FF6B6B, #FFB366, #FFE66D, #4ECDC4, #6B8EFF, #A78BFA);
+    background-size: 400% 100%;
+    animation: gradient-slide 7s ease infinite;
+    padding: 2px;
+    border-radius: 0.625rem;
+  }
+
+  .navbar .contact-btn .inner {
+    @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black transition-colors duration-300;
+  }
+
+  .navbar .contact-btn .inner span {
+    @apply group-hover:text-white transition-colors duration-300;
+  }
+
+  @keyframes gradient-slide {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+/* here the navbar ends */
   .app-showcase {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
+  }
 
-    .showcaselayout {
-      @apply flex xl:flex-row flex-col gap-10 justify-between;
-    }
+  .app-showcase .showcaselayout {
+    @apply flex xl:flex-row flex-col gap-10 justify-between;
+  }
 
-    .first-project-wrapper {
-      @apply h-full flex flex-col justify-between xl:w-[60%];
+  .app-showcase .first-project-wrapper {
+    @apply h-full flex flex-col justify-between xl:w-[60%];
+  }
 
-      .image-wrapper {
-        @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+  .app-showcase .first-project-wrapper .image-wrapper {
+    @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+  }
 
-        img {
-          @apply w-full h-full object-cover rounded-xl absolute inset-0;
-        }
-      }
+  .app-showcase .first-project-wrapper .image-wrapper img {
+    @apply w-full h-full object-cover rounded-xl absolute inset-0;
+  }
 
-      .text-content {
-        @apply space-y-5 mt-5;
+  .app-showcase .first-project-wrapper .text-content {
+    @apply space-y-5 mt-5;
+  }
 
-        .badges {
-          @apply flex gap-2 mb-4;
-        }
+  .app-showcase .first-project-wrapper .text-content .badges {
+    @apply flex gap-2 mb-4;
+  }
 
-        h2 {
-          @apply text-2xl md:text-3xl lg:text-4xl font-bold;
-        }
-      }
-    }
+  .app-showcase .first-project-wrapper .text-content h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
 
-    .project-list-wrapper {
-      @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+  .app-showcase .project-list-wrapper {
+    @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+  }
 
-      .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
-      }
+  .app-showcase .project-list-wrapper .image-wrapper {
+    @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+  }
 
-      img {
-        @apply w-full h-full object-contain rounded-xl;
-      }
+  .app-showcase .project-list-wrapper img {
+    @apply w-full h-full object-contain rounded-xl;
+  }
 
-      h2 {
-        @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5;
-      }
-    }
+  .app-showcase .project-list-wrapper h2 {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5;
   }
 
   .cta-wrapper {
@@ -224,27 +238,27 @@ section {
   }
 
   .cta-button {
-    @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+    @apply px-1 py-3 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+  }
 
-    .bg-circle {
-      @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
-        w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
-        rounded-full bg-white-50 transition-all duration-500;
-    }
+  .cta-button .bg-circle {
+  @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
+    w-[120%] h-[120%] group-hover:size-10 group-hover:right-10
+    rounded-full bg-[#d8d8ff] transition-all duration-500;
+}
 
-    .text {
-      @apply uppercase md:text-lg text-black transition-all duration-500
-        group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
-    }
+  .cta-button .text {
+    @apply uppercase md:text-lg text-black transition-all duration-500
+      group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
+  }
 
-    .arrow-wrapper {
-      @apply group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2 
-        -translate-y-1/2 flex justify-center items-center overflow-hidden;
+  .cta-button .arrow-wrapper {
+    @apply group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2 
+      -translate-y-1/2 flex justify-center items-center overflow-hidden;
+  }
 
-      img {
-        @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
-      }
-    }
+  .cta-button .arrow-wrapper img {
+    @apply size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500;
   }
 
   .card-border {
@@ -281,10 +295,10 @@ section {
 
   .tech-card-content {
     @apply flex flex-col md:justify-center items-center xl:gap-5 xl:h-[50vh] overflow-hidden relative z-10 group-hover:cursor-grab;
+  }
 
-    & p {
-      @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-white-50 text-center;
-    }
+  .tech-card-content p {
+    @apply text-lg 2xl:text-2xl pb-5 xl:pb-0 font-semibold text-white-50 text-center;
   }
 
   .tech-grid {
@@ -296,46 +310,48 @@ section {
   }
 
   form {
-    label {
-      @apply block text-white-50 mb-2;
-    }
+    @apply space-y-5;
+  }
 
-    input,
-    textarea {
-      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
-    }
+  form label {
+    @apply block text-white-50 mb-2;
+  }
 
-    a {
-      @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
+  form input,
+  form textarea {
+    @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
+  }
 
-      img {
-        @apply inline-block;
-      }
-    }
+  form a {
+    @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
+  }
+
+  form a img {
+    @apply inline-block;
   }
 
   .footer {
     @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
+  }
 
-    .footer-container {
-      @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 w-full;
-    }
+  .footer .footer-container {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 w-full;
+  }
 
-    p {
-      @apply text-center md:text-start cursor-pointer;
-    }
+  .footer p {
+    @apply text-center md:text-start cursor-pointer;
+  }
 
-    .socials {
-      @apply flex items-center justify-center gap-5;
+  .footer .socials {
+    @apply flex items-center justify-center gap-5;
+  }
 
-      .icon {
-        @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
-      }
+  .footer .socials .icon {
+    @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+  }
 
-      img {
-        @apply inline-block;
-      }
-    }
+  .footer .socials img {
+    @apply inline-block;
   }
 }
 
@@ -509,7 +525,7 @@ section {
   opacity: 1;
   overflow: hidden;
   white-space: nowrap;
-  
+
   /* Flowing gradient effect */
   background: linear-gradient(
     90deg,
@@ -534,7 +550,7 @@ section {
   white-space: nowrap;
   position: absolute;
   left: 0;
-  
+
   /* Flowing gradient effect */
   background: linear-gradient(
     90deg,
@@ -566,7 +582,7 @@ section {
   overflow: hidden;
   white-space: nowrap;
   transition-delay: 0s;
-  
+
   /* Flowing gradient effect */
   background: linear-gradient(
     90deg,
@@ -637,9 +653,40 @@ section {
   animation: flowingGradientFast 7s linear infinite;
 }
 
-/* Apply slower effect (change animation name if you want slower) */
-/* .expanding-logo .name-ash,
-.expanding-logo .name-ayush,
-.expanding-logo .surname {
-  animation: flowingGradientSlow 6s linear infinite;
-} */
+/* ANIMATED FLOWING GRADIENT BORDER BUTTON STYLE */
+.gradient-border-btn .cta-button {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-border-btn .cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 2px;
+  
+  /* The animated gradient */
+  background: linear-gradient(
+    90deg,
+    #62e0ff,
+    #52aeff,
+    #fd5c79,
+    #6d45ce,
+    #62e0ff
+  );
+  background-size: 200% 200%;
+  animation: flowingGradient 4s linear infinite;
+
+  /* Masking to create the border effect */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+}
+
