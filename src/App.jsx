@@ -8,20 +8,21 @@ import ShowcaseSection from "./sections/ShowcaseSection";
 import LogoShowcase from "./sections/LogoShowcase";
 import FeatureCards from "./sections/FeatureCards";
 import Navbar from "./components/NavBar";
+import "./index.css";
 
 const App = () => (
-  <>
+  <div className="custom-cursor">
     <Navbar />
     <Hero />
     <TechStack />
-    <Experience />
     <ShowcaseSection />
+    <Experience />
     <LogoShowcase />
     <FeatureCards />
     <Testimonials />
     <Contact />
     <Footer />
-  </>
+  </div>
 );
 
 export default App;

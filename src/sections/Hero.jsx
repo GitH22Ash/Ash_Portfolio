@@ -82,7 +82,11 @@ const Hero = () => {
         </figure>
       </div>
 
-      {/* <AnimatedCounter /> */}
+      <div className="relative z-30 flex justify-center items-center text-center py-10">
+        <p className="text-white-50 text-lg md:text-xl max-w-2xl">
+        🚀 Always eager to learn, grow, and contribute to real-world projects that make a difference.
+        </p>
+        </div>
     </section>
   );
 };
