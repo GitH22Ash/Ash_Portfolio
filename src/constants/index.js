@@ -271,6 +271,39 @@ const socialImgs = [
   },
 ];
 
+const projects = [
+  {
+    id: 1,
+    title: "Ryde",
+    description: "On-Demand Rides Made Simple with a Powerful, User-Friendly App",
+    fullDescription: "An app built with React Native, Expo, & TailwindCSS for a fast, user-friendly experience.",
+    imgPath: "/images/project1.png",
+    tags: ["React Native", "Expo", "TailwindCSS"],
+    link: "#",
+    demoLink: "#",
+  },
+  {
+    id: 2,
+    title: "Library Management",
+    description: "The Library Management Platform",
+    fullDescription: "A comprehensive platform for managing library resources, books, and user memberships.",
+    imgPath: "/images/project2.png",
+    tags: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    demoLink: "#",
+  },
+  {
+    id: 3,
+    title: "YC Directory",
+    description: "A Startup Showcase App",
+    fullDescription: "Discover and explore innovative startups from Y Combinator's portfolio.",
+    imgPath: "/images/project3.png",
+    tags: ["Next.js", "TypeScript", "API"],
+    link: "#",
+    demoLink: "#",
+  },
+];
+
 export {
   words,
   abilities,
@@ -283,4 +316,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  projects,
 };
