@@ -712,3 +712,27 @@ section {
   pointer-events: none;
 }
 
+.sub{
+  color: var(--color-white-50);
+  font-size: 1.1rem;
+  font-weight: 500;
+  /* margin-top: 0.5rem; */
+}
+
+/* background ripple effect */
+@theme inline {
+  --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
+    var(--delay, 0ms);
+
+  @keyframes cell-ripple {
+    0% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
+}

@@ -1,11 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import AnimatedCounter from "../components/AnimatedCounter.jsx";
+// import AnimatedCounter from "../components/AnimatedCounter.jsx";
 import Button from "../components/Button.jsx";
 import { words } from "../constants/index.js";
-import HeroExperience from "../components/models/hero_models/HeroExperience.jsx";
+// import HeroExperience from "../components/models/hero_models/HeroExperience.jsx";
 import { Spotlight } from "../components/ui/Spotlight.jsx";
+import BackgroundRippleEffect from "../components/ui/background-ripple-effect.jsx";
 
 const Hero = () => {
   useGSAP(() => {
@@ -18,24 +19,31 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      {/* Spotlight Effects - Add these at the top */}
-      <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="white"
-        />
-        <Spotlight
-          className="h-[80vh] w-[50vw] top-10 left-full"
-          fill="purple"
-        />
-        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
+      <BackgroundRippleEffect
+        rows={13}
+        cols={30}
+        fillColor="rgba(135, 206, 235, 0.2)"
+        className="absolute inset-0 z-20"
+      />
+      <Spotlight className="left-90 top-28 h-[80vh] w-[50vw]" fill="#87CEEB" />
 
-      <div className="absolute top-0 left-0 z-10">
+      <Spotlight
+          className="-top-30 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="#fefefeff"
+        />
+
+        <Spotlight
+          className="h-[90vh] w-[40vw] top-20 left-full"
+          fill="#ffffffff"
+        />
+
+      <div className="absolute top-0 left-0 z-10 pointer-events-none">
         <img src="/images/bg.png" alt="" />
       </div>
 
-      <div className="hero-layout">
+      <div className="hero-layout flex justify-center items-center text-center md:text-left">
         {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <header className="flex flex-col justify-center">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
@@ -62,7 +70,7 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+            <p className="text-white-50 md:text-xl relative pointer-events-none">
               Hi, I'm Ayush, Fullstack Web Developer ,an aspiring Software
               Engineer <br /> and Designer. I help individuals bring their
               ideas to life through
@@ -70,7 +78,7 @@ const Hero = () => {
               innovative and user-centric digital solutions.
             </p>
             
-           <div className="flex gap-4 justify-left">
+           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
             <Button
               text="See My Work"
               className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
@@ -87,11 +95,11 @@ const Hero = () => {
         </header>
 
         {/* RIGHT: 3D Model or Visual */}
-        <figure>
+        {/* <figure>
           <div className="hero-3d-layout">
             <HeroExperience />
           </div>
-        </figure>
+        </figure> */}
       </div>
 
       <div className="relative z-30 flex justify-center items-center text-center py-10">
