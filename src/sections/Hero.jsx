@@ -1,12 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
-// import AnimatedCounter from "../components/AnimatedCounter.jsx";
 import Button from "../components/Button.jsx";
 import { words } from "../constants/index.js";
-// import HeroExperience from "../components/models/hero_models/HeroExperience.jsx";
 import { Spotlight } from "../components/ui/Spotlight.jsx";
-import BackgroundRippleEffect from "../components/ui/background-ripple-effect.jsx";
+import { BackgroundBeams } from "../components/ui/background-beams.jsx";
 
 const Hero = () => {
   useGSAP(() => {
@@ -19,12 +16,8 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <BackgroundRippleEffect
-        rows={13}
-        cols={30}
-        fillColor="rgba(135, 206, 235, 0.2)"
-        className="absolute inset-0 z-20"
-      />
+      <BackgroundBeams />
+
       <Spotlight className="left-90 top-28 h-[80vh] w-[50vw]" fill="#87CEEB" />
 
       <Spotlight
