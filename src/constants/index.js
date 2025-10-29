@@ -11,10 +11,10 @@ const navLinks = [
     name: "Work",
     link: "#work",
   },
-  {
-    name: "Experience",
-    link: "#experience",
-  },
+  // {
+  //   name: "Experience",
+  //   link: "#experience",
+  // },
   {
     name: "Testimonials",
     link: "#testimonials",
@@ -31,14 +31,6 @@ const words = [
   { text: "Designs", imgPath: "/images/designs.svg" },
   { text: "Code", imgPath: "/images/code.svg" },
 ];
-
-const counterItems = [
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 200, suffix: "+", label: "Satisfied Clients" },
-  { value: 108, suffix: "+", label: "Completed Projects" },
-  { value: 90, suffix: "%", label: "Client Retention Rate" },
-];
-
 const logoIconsList = [
   {
     imgPath: "/images/logos/company-logo-1.png",
