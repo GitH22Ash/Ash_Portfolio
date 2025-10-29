@@ -110,15 +110,15 @@ const Hero = () => {
             </p>
             <div className="flex flex-col gap-2 text-white-50">
               <p className="flex items-center gap-2">
-                <span className="text-2xl"><img src="../images/globe.png" alt="globe" className="globe"/></span>
+                <span className="text-2xl"><img src="../images/earth.png" alt="globe" className="new-img"/></span>
                 <span>Flexible with Global Teams</span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-2xl">💡</span>
+                <span className="text-2xl"><img src="../images/bulb.png" alt="bulb" className="new-img"/></span>
                 <span>Building innovative solutions</span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-2xl">🚀</span>
+                <span className="text-2xl"><img src="../images/rocket.png" alt="rocket" className="new-img"/></span>
                 <span>Delivering results that matter</span>
               </p>
             </div>
