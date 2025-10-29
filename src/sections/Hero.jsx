@@ -4,6 +4,8 @@ import Button from "../components/Button.jsx";
 import { words } from "../constants/index.js";
 import { Spotlight } from "../components/ui/Spotlight.jsx";
 import { BackgroundBeams } from "../components/ui/background-beams.jsx";
+import { GlobeDemo } from "../components/GlobeDemo.jsx";
+// import { px } from "framer-motion";
 
 const Hero = () => {
   useGSAP(() => {
@@ -95,11 +97,41 @@ const Hero = () => {
         </figure> */}
       </div>
 
-      <div className="relative z-30 flex justify-center items-center text-center py-10">
-        <p className="text-white-50 text-lg md:text-xl max-w-2xl">
-        🚀 Always eager to learn, grow, and contribute to real-world projects that make a difference.
-        </p>
+      {/* Two Column Section */}
+      <div className="relative z-30 py-10 px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto items-center">
+          {/* Left Section */}
+          <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              Connecting Globally . . .
+            </h3>
+            <p className="text-white-50 text-lg md:text-xl max-w-lg">
+              Always eager to learn, grow, and contribute to real-world projects that make a difference across the globe.
+            </p>
+            <div className="flex flex-col gap-2 text-white-50">
+              <p className="flex items-center gap-2">
+                <span className="text-2xl"><img src="../images/globe.png" alt="globe" className="globe"/></span>
+                <span>Flexible with Global Teams</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-2xl">💡</span>
+                <span>Building innovative solutions</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-2xl">🚀</span>
+                <span>Delivering results that matter</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Right Section - Globe */}
+          <div className="flex justify-center items-center">
+            <div className="w-full h-[400px] md:h-[500px]">
+              <GlobeDemo />
+            </div>
+          </div>
         </div>
+      </div>
     </section>
   );
 };
