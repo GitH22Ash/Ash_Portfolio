@@ -46,12 +46,12 @@ const AppShowcase = () => {
     <section id="work" ref={sectionRef} className="section-padding">
       <div className="w-full">
         <TitleHeader
-          title="My Work"
-          sub={
-            <p className="sub text-lg md:text-xl">
-              Discover a diverse range of projects reflecting my expertise in development, design, and creative problem-solving
-            </p>
-          }
+          title={<img 
+                      src="../images/work.png" 
+                      alt="Showcase" 
+                      className="sub-icon" 
+                      />}
+          sub={<p className="tech-text">My Recent Work</p>}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-10">

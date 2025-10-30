@@ -718,10 +718,98 @@ section {
   font-weight: 500;
   /* margin-top: 0.5rem; */
 }
-
+/* this was added just below the Connecting Globally ... text  */
 .new-img{
   height: 30px;
   width: 30px;
 }
 
+.sub-icon{
+  height: 80px;
+  width: 80px;
+  background: #000;
+}
 
+.tech-text{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+
+
+/* 3D carousel */
+.carousel-banner {
+  width: 100%;
+  height: 60vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slider {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRotate 20s linear infinite;
+}
+
+@keyframes autoRotate {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.carousel-item {
+  position: absolute;
+  inset: 0;
+  transform: 
+    rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+    translateZ(550px);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1023px) {
+  .carousel-slider {
+    width: 160px;
+    height: 200px;
+  }
+  
+  .carousel-item {
+    transform: 
+      rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+      translateZ(300px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-banner {
+    height: 40vh;
+  }
+  
+  .carousel-slider {
+    width: 100px;
+    height: 150px;
+  }
+  
+  .carousel-item {
+    transform: 
+      rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+      translateZ(180px);
+  }
+}

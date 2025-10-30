@@ -43,8 +43,12 @@ const Contact = () => {
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+          title={<img 
+                      src="../images/connect.png" 
+                      alt="Showcase" 
+                      className="sub-icon" 
+                      />}
+          sub={<p className="tech-text">Any Questions? - Let's Connect</p>}
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
@@ -62,7 +66,7 @@ const Contact = () => {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What’s your good name?"
+                    placeholder="What’s your name?"
                     required
                   />
                 </div>
@@ -94,7 +98,7 @@ const Contact = () => {
                 </div>
 
                 <button type="submit">
-                  <div className="cta-button group">
+                  <div className="cta-button group md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold">
                     <div className="bg-circle" />
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}
