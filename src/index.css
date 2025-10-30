@@ -349,11 +349,11 @@ section {
   }
 
   .footer .socials {
-    @apply flex items-center justify-center gap-5;
+    @apply flex items-center justify-center gap-2;
   }
 
   .footer .socials .icon {
-    @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-10 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
+    @apply border border-black-50 bg-black-100 flex justify-center items-center rounded-xl size-1 md:size-12 cursor-pointer transition-all duration-500 hover:bg-black-50;
   }
 
   .footer .socials img {

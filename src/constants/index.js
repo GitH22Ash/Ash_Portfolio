@@ -288,7 +288,7 @@ const socialImgs = [
   {
     name: "insta",
     imgPath: "/images/insta.png",
-    src: "https://www.instagram.com/arcturus14_15_40"
+    src: "https://www.instagram.com/_itsash_22/"
   },
   {
     name: "gh",
@@ -296,9 +296,9 @@ const socialImgs = [
     src:"https://github.com/GitH22Ash"
   },
   {
-    name: "x",
-    imgPath: "/images/x.png",
-    src: "https://x.com/Ayush_B22"
+    name: "linktree",
+    imgPath: "/images/lt.png",
+    src: "https://linktr.ee/itz_ash_22"
   },
   {
     name: "linkedin",

@@ -34,7 +34,7 @@ const Footer = () => {
                   <img
                     src={socialImg.imgPath}
                     alt={`${socialImg.name} icon`}
-                    className=" hover:scale-150 hover:opacity-100 transition-transform duration-150 cursor-pointer"
+                    className=" hover:scale-125 hover:opacity-100 transition-transform duration-150 cursor-pointer"
                   />
                 </a>
               ) : (
