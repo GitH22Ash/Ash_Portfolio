@@ -25,6 +25,27 @@ const TechStack = () => {
         },
       }
     );
+
+    // Animate center model separately
+    gsap.fromTo(
+      ".center-model-image",
+      {
+        opacity: 0,
+        y: 100,
+        scale: 0.8,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#skills",
+          start: "top center",
+        },
+      }
+    );
   });
 
   return (
@@ -41,8 +62,11 @@ const TechStack = () => {
           sub={<p className="tech-text">My Tech Stack</p>}
         />
         
-        {/* 3D Carousel replacing the grid */}
-        <TechCarousel3D techStackIcons={techStackIcons} />
+        {/* 3D Carousel with center image */}
+        <TechCarousel3D 
+          techStackIcons={techStackIcons} 
+          centerImage="/images/center-character.png" // Replace with your image path
+        />
       </div>
     </div>
   );

@@ -12,14 +12,50 @@
   margin: 60px 0;
 }
 
+/* Central Model/Image */
+.carousel-center-model {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 75vh;
+  bottom: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.center-model-image {
+  width: auto;
+  height: 95%;
+  max-height: 650px;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.6));
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 .carousel-slider {
   position: relative;
-  width: 220px;
-  height: 280px;
+  width: 180px;
+  height: 200px;
   transform-style: preserve-3d;
   transform: perspective(1000px);
   animation: autoRotate 25s linear infinite;
   z-index: 2;
+  top: -80px;
 }
 
 @keyframes autoRotate {
@@ -69,13 +105,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px;
-  gap: 20px;
+  padding: 20px 15px;
+  gap: 15px;
+}
+
+.carousel-icon-container {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .carousel-tech-icon {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
@@ -99,6 +144,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.5px;
   
   /* Positioning for underline */
