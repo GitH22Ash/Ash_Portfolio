@@ -20,23 +20,32 @@ const Hero = () => {
     <section id="hero" className="relative overflow-hidden">
       <BackgroundBeams />
 
-      <Spotlight className="left-90 top-28 h-[80vh] w-[50vw]" fill="#87CEEB" />
+      <Spotlight className="left-90 top-28 h-[80vh] w-[50vw]" fill="#c8e4f0ff" />
+      <Spotlight className="left-90 top-28 h-[80vh] w-[50vw]" fill="#8dc7e1ff" />
 
       <Spotlight
-          className="-top-30 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="#fefefeff"
+          className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="#c8e4f0ff"
+        />
+      <Spotlight
+          className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="#7facc0ff"
         />
 
         <Spotlight
           className="h-[90vh] w-[40vw] top-20 left-full"
-          fill="#ffffffff"
+          fill="#78c1e0ff"
+        />
+        <Spotlight
+          className="h-[90vh] w-[40vw] top-50 left-full"
+          fill="#c8e4f0ff"
         />
 
       <div className="absolute top-0 left-0 z-10 pointer-events-none">
         <img src="/images/bg.png" alt="" />
       </div>
 
-      <div className="hero-layout flex justify-center items-center text-center md:text-left">
+      <div className="hero-layout flex justify-center items-center text-center md:text-justify">
         {/* LEFT: Hero Content */}
         <header className="flex flex-col justify-center">
           <div className="flex flex-col gap-7">

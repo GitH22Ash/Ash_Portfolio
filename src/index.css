@@ -13,7 +13,7 @@ html,
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
   scroll-behavior: smooth;
   font-family: "Mona Sans", sans-serif;
@@ -733,4 +733,27 @@ section {
 .tech-text{
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50%));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+}
+
+/* .animate-scroll:hover {
+  animation-play-state: paused;
+} */
+
+/* text alignment hero */
+.md\:text-justify {
+  text-align: left;
 }
