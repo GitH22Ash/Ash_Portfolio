@@ -1,4 +1,5 @@
 import { abilities } from "../constants";
+import "./FeatureCards.css";
 
 const FeatureCards = () => (
   <div className="w-full padding-x-lg">
@@ -6,13 +7,13 @@ const FeatureCards = () => (
       {abilities.map(({ imgPath, title, desc }) => (
         <div
           key={title}
-          className="card-border rounded-xl p-8 flex flex-col gap-4"
+          className="feature-card"
         >
-          <div className="size-14 flex items-center justify-center rounded-full">
-            <img src={imgPath} alt={title} />
+          <div className="feature-card-icon-wrapper">
+            <img src={imgPath} alt={title} className="feat-img"/>
           </div>
-          <h3 className="text-white text-2xl font-semibold mt-2">{title}</h3>
-          <p className="text-white-50 text-lg">{desc}</p>
+          <h3 className="feature-card-title">{title}</h3>
+          <p className="feature-card-desc">{desc}</p>
         </div>
       ))}
     </div>

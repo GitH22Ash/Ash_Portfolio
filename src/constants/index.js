@@ -35,7 +35,7 @@ const logoIconsList = [
   {
     imgPath: "/images/logos/company-logo-1.png",
   },
-  {
+   {
     imgPath: "/images/logos/company-logo-2.png",
   },
   {
@@ -65,21 +65,27 @@ const logoIconsList = [
   {
     imgPath: "/images/logos/company-logo-11.png",
   },
+  {
+    imgPath: "/images/logos/company-logo-12.png",
+  },
+  {
+    imgPath: "/images/logos/company-logo-13.png",
+  },
 ];
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
+    imgPath: "/images/quality.png",
     title: "Quality Focus",
     desc: "Delivering high-quality results while maintaining attention to every detail.",
   },
   {
-    imgPath: "/images/chat.png",
+    imgPath: "/images/comm.png",
     title: "Reliable Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
-    imgPath: "/images/time.png",
+    imgPath: "/images/ontime.png",
     title: "On-Time Delivery",
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },

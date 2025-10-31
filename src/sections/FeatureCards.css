@@ -1,0 +1,137 @@
+/* Feature Card Styles - Solid Background Version */
+.feature-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(15, 15, 25, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient border on hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card:hover {
+  background: linear-gradient(135deg, rgba(25, 25, 40, 0.98) 0%, rgba(20, 20, 30, 0.98) 100%);
+  transform: translateY(-12px);
+  box-shadow: 
+    0 20px 60px rgba(102, 126, 234, 0.3),
+    0 0 0 1px rgba(102, 126, 234, 0.2) inset;
+}
+
+/* Icon wrapper */
+.feature-card-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* Icon styling */
+.feature-card img {
+  width: 60px;
+  height: 60px;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.feature-card:hover img {
+  transform: scale(1.1) translateY(-5px);
+  filter: drop-shadow(0 8px 20px rgba(102, 126, 234, 0.6));
+}
+
+/* Title with gradient */
+.feature-card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-card-title {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Description */
+.feature-card-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.feature-card:hover .feature-card-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .feature-card {
+    padding: 32px 24px;
+  }
+
+  .feature-card-title {
+    font-size: 1.5rem;
+  }
+
+  .feature-card-desc {
+    font-size: 1rem;
+  }
+
+  .feature-card-icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .feature-card img {
+    width: 100px;
+    height: 50px;
+    /* justify-items: center; */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .feature-card {
+    padding: 24px 20px;
+  }
+
+  .feature-card-title {
+    font-size: 1.25rem;
+  }
+
+  .feature-card-desc {
+    font-size: 0.9rem;
+  }
+}

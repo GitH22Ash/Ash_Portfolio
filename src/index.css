@@ -5,8 +5,6 @@ body {
   cursor: url("./Cursor.png") 10 10, auto !important;
 }
 
-
-
 :root {
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
@@ -54,7 +52,7 @@ section {
   }
 
   .section-padding {
-    @apply px-5 md:px-10 md:mt-40 mt-20;
+    @apply px-2 md:px-10 md:mt-30 mt-20;
   }
 
   .mt-responsive {
@@ -191,6 +189,8 @@ section {
     50% { background-position: 100% 50%; }
   }
 /* here the navbar ends */
+
+
   .app-showcase {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
   }
