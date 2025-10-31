@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 body {
-  cursor: url("./Cursor.png") 10 10, auto !important;
+  cursor: url("/Cursor.png") 10 10, auto !important;
 }
 
 :root {
