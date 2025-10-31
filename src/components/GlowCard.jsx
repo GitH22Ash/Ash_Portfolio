@@ -1,44 +1,44 @@
 import { useRef } from "react";
 
-const GlowCard = ({ card, index, children }) => {
-  // refs for all the cards
-  const cardRefs = useRef([]);
+const GlowCard = ({ card, children }) => {
+  const cardRef = useRef(null);
 
-  // when mouse moves over a card, rotate the glow effect
-  const handleMouseMove = (index) => (e) => {
-    // get the current card
-    const card = cardRefs.current[index];
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
     if (!card) return;
 
-    // get the mouse position relative to the card
     const rect = card.getBoundingClientRect();
     const mouseX = e.clientX - rect.left - rect.width / 2;
     const mouseY = e.clientY - rect.top - rect.height / 2;
 
-    // calculate the angle from the center of the card to the mouse
     let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
-
-    // adjust the angle so that it's between 0 and 360
     angle = (angle + 360) % 360;
 
-    // set the angle as a CSS variable
     card.style.setProperty("--start", angle + 60);
   };
 
-  // return the card component with the mouse move event
   return (
     <div
-      ref={(el) => (cardRefs.current[index] = el)}
-      onMouseMove={handleMouseMove(index)}
-      className="card card-border timeline-card rounded-xl p-10 mb-5 break-inside-avoid-column"
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="card card-border timeline-card rounded-xl p-10 h-full flex flex-col"
     >
       <div className="glow"></div>
+      {/* Star Rating - Using SVG instead of images */}
       <div className="flex items-center gap-1 mb-5">
         {Array.from({ length: 5 }, (_, i) => (
-          <img key={i} src="/images/star.png" alt="star" className="size-5" />
+          <svg
+            key={i}
+            className="w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="#FFD700"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+          </svg>
         ))}
       </div>
-      <div className="mb-5">
+      <div className="mb-5 flex-grow">
         <p className="text-white-50 text-lg">{card.review}</p>
       </div>
       {children}
