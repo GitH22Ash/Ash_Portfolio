@@ -87,11 +87,13 @@ const Hero = () => {
               text="See My Work"
               className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
               id="counter"
+              href="#work"
             />
             <Button
               text="View Resume"
               className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
               id="counter"
+              href="/files/Ayush Bijalwan_Resume.pdf"
             />
           </div>
 

@@ -1,31 +1,36 @@
 /**
  * A reusable CTA button component.
- * When clicked, it scrolls smoothly to the section with ID "counter",
- * with a small offset from the top for better visual placement.
+ * - If href starts with "#", it smoothly scrolls to that section.
+ * - If href is a link (like a PDF or page), it navigates normally.
  */
 
-const Button = ({ text, className, id }) => {
+const Button = ({ text, className, href }) => {
+  const handleClick = (e) => {
+    if (!href) return;
+
+    // Handle smooth scroll for section links
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+
+      if (target) {
+        const offset = window.innerHeight * 0.15;
+        const top =
+          target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+    // Otherwise (PDF, external page), do nothing → normal link behavior
+  };
+
   return (
     <a
-      onClick={(e) => {
-        e.preventDefault(); // Stop the link from jumping instantly
-
-        const target = document.getElementById("counter"); // Find the section with ID "counter"
-
-        // Only scroll if we found the section and an ID is passed in
-        // taht prevents the contact button from scrolling to the top
-        if (target && id) {
-          const offset = window.innerHeight * 0.15; // Leave a bit of space at the top
-
-          // Calculate how far down the page we need to scroll
-          const top =
-            target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-          // Scroll smoothly to that position
-          window.scrollTo({ top, behavior: "smooth" });
-        }
-      }}
-      className={`${className ?? ""} cta-wrapper`} // Add base + extra class names
+      href={href}
+      onClick={handleClick}
+      className={`${className ?? ""} cta-wrapper`}
+      target={href.endsWith(".pdf") ? "_blank" : "_self"}
+      rel="noopener noreferrer"
     >
       <div className="cta-button group">
         <div className="bg-circle" />
