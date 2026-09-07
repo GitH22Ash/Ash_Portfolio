@@ -24,22 +24,22 @@ const Hero = () => {
       <Spotlight className="left-90 top-28 h-[80vh] w-[50vw]" fill="#8dc7e1ff" />
 
       <Spotlight
-          className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="#c8e4f0ff"
-        />
+        className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
+        fill="#c8e4f0ff"
+      />
       <Spotlight
-          className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="#7facc0ff"
-        />
+        className="-top-20 -left-10 md:-left-32 md:-top-20 h-screen"
+        fill="#7facc0ff"
+      />
 
-        <Spotlight
-          className="h-[90vh] w-[40vw] top-20 left-full"
-          fill="#78c1e0ff"
-        />
-        <Spotlight
-          className="h-[90vh] w-[40vw] top-50 left-full"
-          fill="#c8e4f0ff"
-        />
+      <Spotlight
+        className="h-[90vh] w-[40vw] top-20 left-full"
+        fill="#78c1e0ff"
+      />
+      <Spotlight
+        className="h-[90vh] w-[40vw] top-50 left-full"
+        fill="#c8e4f0ff"
+      />
 
       <div className="absolute top-0 left-0 z-10 pointer-events-none">
         <img src="/images/bg.png" alt="" />
@@ -81,21 +81,21 @@ const Hero = () => {
               <br />
               innovative and user-centric digital solutions.
             </p>
-            
-           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
-              id="counter"
-              href="#work"
-            />
-            <Button
-              text="View Resume"
-              className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
-              id="counter"
-              href="/files/Ayush Bijalwan_Resume.pdf"
-            />
-          </div>
+
+            <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+              <Button
+                text="See My Work"
+                className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
+                id="counter"
+                href="#work"
+              />
+              <Button
+                text="View Resume"
+                className="md:w-80 md:h-16 w-60 h-12 gradient-border-btn text-xl font-semibold"
+                id="counter"
+                href="/files/Ayush_Resume.pdf"
+              />
+            </div>
 
           </div>
         </header>
@@ -121,15 +121,15 @@ const Hero = () => {
             </p>
             <div className="flex flex-col gap-2 text-white-50">
               <p className="flex items-center gap-2">
-                <span className="text-2xl"><img src="../images/earth.png" alt="globe" className="new-img"/></span>
+                <span className="text-2xl"><img src="../images/earth.png" alt="globe" className="new-img" /></span>
                 <span>Flexible with Global Teams</span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-2xl"><img src="../images/bulb.png" alt="bulb" className="new-img"/></span>
+                <span className="text-2xl"><img src="../images/bulb.png" alt="bulb" className="new-img" /></span>
                 <span>Building innovative solutions</span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="text-2xl"><img src="../images/rocket.png" alt="rocket" className="new-img"/></span>
+                <span className="text-2xl"><img src="../images/rocket.png" alt="rocket" className="new-img" /></span>
                 <span>Delivering results that matter</span>
               </p>
             </div>
